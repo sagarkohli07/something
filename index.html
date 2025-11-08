@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Kuchupuchu ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFB6C1;
+            --secondary-color: #FFC0CB;
+            --text-primary: #8B4252;
+            --text-secondary: #D4567A;
+            --accent-color: #FF6B9D;
+            --gradient-bg: linear-gradient(135deg, #FFE4E8 0%, #FFF0F3 100%);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-script: 'Dancing Script', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--gradient-bg);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding: 20px;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .page.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-next {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-back {
+            background: #6BA3D8;
+            color: white;
+        }
+
+        /* Page 1 - Landing */
+        #page1 .card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        #page1 .header {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        #page1 .big-text {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        #page1 .i-am {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            color: var(--accent-color);
+            font-style: italic;
+            line-height: 1;
+        }
+
+        #page1 .really {
+            font-size: 20px;
+            color: var(--text-secondary);
+            font-style: italic;
+            position: absolute;
+            right: 60px;
+            top: 15px;
+        }
+
+        #page1 .lucky {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #page1 .subtitle {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+
+        .kitten {
+            font-size: 80px;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 24px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .sparkle-1 {
+            top: 20px;
+            right: 30px;
+        }
+
+        .sparkle-2 {
+            bottom: 30px;
+            left: 30px;
+        }
+
+        /* Page 2 - Music Player */
+        #page2 .title {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .music-player {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .hello-kitty {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .hello-kitty-face {
+            width: 100px;
+            height: 90px;
+            background: white;
+            border: 3px solid var(--text-primary);
+            border-radius: 50% 50% 45% 45%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .hello-kitty-bow {
+            width: 40px;
+            height: 30px;
+            background: #FF0000;
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            transform: rotate(-20deg);
+        }
+
+        .hello-kitty-bow::after {
+            content: '';
+            width: 40px;
+            height: 30px;
+            background: #FF0000;
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            left: 25px;
+            transform: rotate(40deg);
+        }
+
+        .hello-kitty-bow::before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: #FFD700;
+            border-radius: 50%;
+            position: absolute;
+            left: 22px;
+            top: 10px;
+            z-index: 2;
+        }
+
+        .hello-kitty-eyes {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px 0;
+        }
+
+        .eye {
+            width: 8px;
+            height: 12px;
+            background: var(--text-primary);
+            border-radius: 50%;
+        }
+
+        .hello-kitty-nose {
+            width: 12px;
+            height: 8px;
+            background: #FFD700;
+            border-radius: 50%;
+            margin: 5px auto;
+        }
+
+        .hello-kitty-whiskers {
+            position: relative;
+        }
+
+        .whisker {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            position: absolute;
+            top: 0;
+        }
+
+        .whisker-left {
+            left: -30px;
+        }
+
+        .whisker-right {
+            right: -30px;
+        }
+
+        .status {
+            color: var(--accent-color);
+            font-size: 12px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+        }
+
+        .song-title {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #FFE4E8;
+            border-radius: 3px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        .control-btn.play {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+        }
+
+        /* Page 3 - Special Cards */
+        #page3 .title {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .special-card {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .card-center {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .cat-with-flower {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .for-you {
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .love-flowers {
+            font-family: var(--font-script);
+            font-size: 28px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .heart-icon {
+            font-size: 24px;
+            color: var(--accent-color);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-footer .valid {
+            flex: 1;
+            min-width: 100%;
+            text-align: center;
+        }
+
+        .card-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .card-nav.prev {
+            left: -20px;
+        }
+
+        .card-nav.next {
+            right: -20px;
+        }
+
+        /* Page 4 - Puzzle Game */
+        #page4 .title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .celebration-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            font-family: var(--font-heading);
+            font-size: 36px;
+            color: var(--accent-color);
+            z-index: 1000;
+            animation: celebrationPop 0.5s ease-out;
+        }
+
+        @keyframes celebrationPop {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .celebration-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 182, 193, 0.3);
+            z-index: 999;
+        }
+
+        .puzzle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .puzzle-cell {
+            aspect-ratio: 1;
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .puzzle-cell:hover:not(.filled) {
+            background: #FFF0F3;
+            transform: scale(1.05);
+        }
+
+        .puzzle-cell.filled {
+            cursor: default;
+        }
+
+        /* Page 5 - Thank You */
+        #page5 .card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        #page5 .header {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        #page5 .thank-you {
+            font-family: var(--font-heading);
+            font-size: 52px;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        #page5 .for-being-mine {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        #page5 .message {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+        }
+
+        #page5 .kitty-with-apple {
+            font-size: 70px;
+            margin: 20px 0;
+        }
+
+        #page5 .footer-text {
+            font-family: var(--font-script);
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-top: 20px;
+        }
+
+        /* Page 6 - Apology Letter */
+        #page6 .card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        #page6 .title {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #page6 .title .for-you {
+            color: var(--accent-color);
+        }
+
+        #page6 .subtitle {
+            font-family: var(--font-script);
+            font-size: 20px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        #page6 .letter-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        #page6 .signature {
+            font-family: var(--font-script);
+            font-size: 18px;
+            color: var(--text-primary);
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .love-stamp {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--accent-color);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-15deg);
+            background: rgba(255, 182, 193, 0.2);
+        }
+
+        .love-stamp .text {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+
+        .love-stamp .heart {
+            font-size: 24px;
+        }
+
+        .letter-kitten {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 50px;
+        }
+
+        @media (max-width: 480px) {
+            #page1 .i-am {
+                font-size: 36px;
+            }
+            #page1 .lucky {
+                font-size: 42px;
+            }
+            #page1 .really {
+                font-size: 16px;
+                right: 40px;
+                top: 10px;
+            }
+            .title {
+                font-size: 24px !important;
+            }
+            #page5 .thank-you {
+                font-size: 38px;
+            }
+            #page5 .for-being-mine {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Landing Page -->
+    <div id="page1" class="page active">
+        <div class="content-container">
+            <div class="card">
+                <div class="sparkle sparkle-1">✨</div>
+                <div class="header">FOR NOMI ✨</div>
+                <div class="big-text">
+                    <div class="i-am">I am</div>
+                    <div class="really">really</div>
+                </div>
+                <div class="lucky">LUCKY</div>
+                <div class="subtitle">
+                    to have found you. You're my everything, and I can't imagine life without you. Please read what I made for you 💖.
+                </div>
+                <div class="kitten">🐱🌸</div>
+                <div class="sparkle sparkle-2">✦</div>
+            </div>
+        </div>
+        <div class="navigation">
+            <div></div>
+            <button class="btn btn-next" onclick="goToPage(2)">Next →</button>
+        </div>
+    </div>
+
+    <!-- Page 2: Music Player -->
+    <div id="page2" class="page">
+        <div class="content-container">
+            <div class="title">Songs Dedicated To You 💕</div>
+            <div class="music-player">
+                <div class="hello-kitty">
+                    <div class="hello-kitty-face">
+                        <div class="hello-kitty-bow"></div>
+                        <div class="hello-kitty-eyes">
+                            <div class="eye"></div>
+                            <div class="eye"></div>
+                        </div>
+                        <div class="hello-kitty-nose"></div>
+                        <div class="hello-kitty-whiskers">
+                            <div class="whisker whisker-left"></div>
+                            <div class="whisker whisker-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status" id="status">PAUSED</div>
+                <div class="song-title" id="songTitle">Timro Pratiksa</div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;" id="songCounter">Song 1 of 2</div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+                <div class="controls">
+                    <button class="control-btn" onclick="previousSong()">⏮</button>
+                    <button class="control-btn play" id="playBtn" onclick="togglePlay()">▶</button>
+                    <button class="control-btn" onclick="nextSong()">⏭</button>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="btn btn-back" onclick="goToPage(1)">← Back</button>
+            <button class="btn btn-next" onclick="goToPage(3)">Next →</button>
+        </div>
+    </div>
+
+    <!-- Page 3: Special Cards -->
+    <div id="page3" class="page">
+        <div class="content-container">
+            <div class="title">Special Cards 💗</div>
+            <div class="card-container">
+                <button class="card-nav prev" onclick="previousCard()">‹</button>
+                <div class="special-card" id="specialCard">
+                    <div class="card-header">
+                        <span>FROM: Me</span>
+                        <span>TO: Nomi</span>
+                    </div>
+                    <div class="card-center">
+                        <div class="cat-with-flower">🐱🌸</div>
+                        <div class="for-you">FOR YOU ≧◡≦</div>
+                        <div class="love-flowers">love flowers for you</div>
+                        <div class="heart-icon">💗</div>
+                    </div>
+                    <div class="card-footer">
+                        <span>DATE: Now</span>
+                        <span class="valid">VALID FOR: Forever with love, Your Sir Ji 💖</span>
+                    </div>
+                </div>
+                <button class="card-nav next" onclick="nextCard()">›</button>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="btn btn-back" onclick="goToPage(2)">← Back</button>
+            <button class="btn btn-next" onclick="goToPage(4)">Next →</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Puzzle Game -->
+    <div id="page4" class="page">
+        <div class="content-container">
+            <div class="title">Fill the heart to continue 💕</div>
+            <div class="puzzle-grid" id="puzzleGrid">
+                <!-- Puzzle cells will be generated by JavaScript -->
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="btn btn-back" onclick="goToPage(3)">← Back</button>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Page 5: Thank You -->
+    <div id="page5" class="page">
+        <div class="content-container">
+            <div class="card">
+                <div class="sparkle sparkle-1">✦</div>
+                <div class="header">FOR NOMI ✦</div>
+                <div class="thank-you">Thank You</div>
+                <div class="for-being-mine">FOR BEING MINE 💞</div>
+                <div class="message">
+                    I hope this little space made you smile. You are my favorite part of every day — always. 💗
+                </div>
+                <div class="kitty-with-apple">🐱🍎</div>
+                <div class="footer-text">made with 💗 and sparkles — forever yours</div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="btn btn-back" onclick="goToPage(4)">← Back</button>
+            <button class="btn btn-next" onclick="goToPage(6)">Next →</button>
+        </div>
+    </div>
+
+    <!-- Page 6: Love Letter -->
+    <div id="page6" class="page">
+        <div class="content-container">
+            <div class="card">
+                <div class="letter-kitten">🐱🌸</div>
+                <div class="title">A LETTER <span class="for-you">FOR YOU</span> ✦</div>
+                <div class="subtitle">Dear Nomi,</div>
+                <div class="letter-content">
+                    I just wanted to say how lucky I am to have you in my life. You bring so much happiness, peace, and meaning to my days. Thank you for being you — truly, I couldn't ask for more.
+                </div>
+                <div class="signature">with all my love — Your Sir Ji 💗</div>
+                <div class="love-stamp">
+                    <div class="text">LOVE</div>
+                    <div class="heart">💗</div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="btn btn-back" onclick="goToPage(5)">← Back</button>
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        // Page navigation
+        let currentPage = 1;
+
+        function goToPage(pageNum) {
+            document.getElementById(`page${currentPage}`).classList.remove('active');
+            currentPage = pageNum;
+            document.getElementById(`page${currentPage}`).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Music Player functionality
+        const songs = [
+            { name: 'Timro Pratiksa', file: 'audio/Timro Pratiksa (Lyrics) - Shallum Lama.mp3' },
+            { name: 'Pehla Nasha', file: 'audio/Pehla Nasha(KoshalWorld.Com).mp3' }
+        ];
+        let currentSongIndex = 0;
+        let audio = new Audio();
+        let isPlaying = false;
+        let progressInterval;
+
+        function togglePlay() {
+            const playBtn = document.getElementById('playBtn');
+            const status = document.getElementById('status');
+
+            if (!isPlaying) {
+                audio.src = songs[currentSongIndex].file;
+                audio.play().catch(err => {
+                    console.log('Audio playback failed:', err);
+                    alert('Please make sure audio files are in the "audio" folder');
+                });
+                playBtn.textContent = '⏸';
+                status.textContent = 'PLAYING';
+                isPlaying = true;
+                startProgress();
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶';
+                status.textContent = 'PAUSED';
+                isPlaying = false;
+                stopProgress();
+            }
+        }
+
+        function startProgress() {
+            stopProgress();
+            progressInterval = setInterval(updateProgress, 100);
+        }
+
+        function stopProgress() {
+            if (progressInterval) clearInterval(progressInterval);
+        }
+
+        function updateProgress() {
+            const currentTime = audio.currentTime || 0;
+            const totalTime = audio.duration || 1;
+            const percentage = (currentTime / totalTime) * 100;
+            document.getElementById('progress').style.width = percentage + '%';
+            document.getElementById('currentTime').textContent = formatTime(currentTime);
+            document.getElementById('totalTime').textContent = formatTime(totalTime);
+        }
+
+        function formatTime(seconds) {
+            if (isNaN(seconds) || seconds === 0) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function previousSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            playNewSong();
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            playNewSong();
+        }
+
+        function playNewSong() {
+            const wasPlaying = isPlaying;
+            if (isPlaying) {
+                audio.pause();
+                stopProgress();
+            }
+
+            audio.src = songs[currentSongIndex].file;
+            updateSongDisplay();
+
+            if (wasPlaying) {
+                audio.play().catch(err => console.log('Audio playback failed:', err));
+                document.getElementById('playBtn').textContent = '⏸';
+                document.getElementById('status').textContent = 'PLAYING';
+                isPlaying = true;
+                startProgress();
+            }
+        }
+
+        function updateSongDisplay() {
+            document.getElementById('songTitle').textContent = songs[currentSongIndex].name;
+            document.getElementById('songCounter').textContent = `Song ${currentSongIndex + 1} of ${songs.length}`;
+            document.getElementById('progress').style.width = '0%';
+            document.getElementById('currentTime').textContent = '0:00';
+        }
+
+        // Audio event listeners
+        audio.addEventListener('ended', () => {
+            nextSong();
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            updateProgress();
+        });
+
+        // Initial display
+        updateSongDisplay();
+
+        // Card navigation
+        const cards = [
+            {
+                from: 'Me',
+                to: 'Nomi',
+                emoji: '🐱🌸',
+                message: 'FOR YOU ≧◡≦',
+                text: 'love flowers for you',
+                valid: 'Forever with love, Your Sir Ji 💖'
+            },
+            {
+                from: 'Your Heart',
+                to: 'My Heart',
+                emoji: '💕💞',
+                message: 'TOGETHER FOREVER',
+                text: 'you and me always',
+                valid: 'Valid for eternity 💗'
+            },
+            {
+                from: 'Me',
+                to: 'My Kuchupuchu',
+                emoji: '🌟✨',
+                message: 'YOU ARE MY STAR',
+                text: 'shining bright in my life',
+                valid: 'Forever and always 💖'
+            }
+        ];
+
+        let currentCard = 0;
+
+        function updateCard() {
+            const card = cards[currentCard];
+            const cardElement = document.getElementById('specialCard');
+            cardElement.innerHTML = `
+                <div class="card-header">
+                    <span>FROM: ${card.from}</span>
+                    <span>TO: ${card.to}</span>
+                </div>
+                <div class="card-center">
+                    <div class="cat-with-flower">${card.emoji}</div>
+                    <div class="for-you">${card.message}</div>
+                    <div class="love-flowers">${card.text}</div>
+                    <div class="heart-icon">💗</div>
+                </div>
+                <div class="card-footer">
+                    <span>DATE: Now</span>
+                    <span class="valid">VALID FOR: ${card.valid}</span>
+                </div>
+            `;
+        }
+
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+
+        // Puzzle Game
+        const puzzlePattern = [
+            '❤️', '✖', '✖',
+            '✖', '', '✖',
+            '✖', '✖', '❤️'
+        ];
+
+        let puzzleState = [...puzzlePattern];
+
+        function initPuzzle() {
+            const grid = document.getElementById('puzzleGrid');
+            grid.innerHTML = '';
+
+            puzzleState.forEach((cell, index) => {
+                const cellDiv = document.createElement('div');
+                cellDiv.className = 'puzzle-cell';
+                if (cell) {
+                    cellDiv.textContent = cell;
+                    cellDiv.classList.add('filled');
+                } else {
+                    cellDiv.onclick = () => fillHeart(index);
+                }
+                grid.appendChild(cellDiv);
+            });
+        }
+
+        function fillHeart(index) {
+            if (!puzzleState[index]) {
+                puzzleState[index] = '❤️';
+                const cells = document.getElementById('puzzleGrid').children;
+                cells[index].textContent = '❤️';
+                cells[index].classList.add('filled');
+                cells[index].onclick = null;
+
+                checkPuzzleComplete();
+            }
+        }
+
+        function checkPuzzleComplete() {
+            const allFilled = puzzleState.every(cell => cell !== '');
+            if (allFilled) {
+                // Show celebration message
+                const overlay = document.createElement('div');
+                overlay.className = 'celebration-overlay';
+                document.body.appendChild(overlay);
+
+                const message = document.createElement('div');
+                message.className = 'celebration-message';
+                message.textContent = 'Complete! 💕';
+                document.body.appendChild(message);
+
+                // Auto-advance to next page after 1.5 seconds
+                setTimeout(() => {
+                    document.body.removeChild(overlay);
+                    document.body.removeChild(message);
+                    goToPage(5);
+                }, 1500);
+            }
+        }
+
+        // Initialize puzzle on load
+        initPuzzle();
+    </script>
+</body>
+</html>
